@@ -35,6 +35,26 @@ $ carthage bootstrap --platform Mac --cache-builds
 - Tar commands
 $ tar cvxf <tarfile> <directory>
 ```
+This will automatically be converted to the following when you invoke `handy`.
+
+```
+$ handy /path/to/handyfile
+Git commands
+------------
+1. git diff -- . ':(exclude)*.xib' | subl
+
+Carthage commands
+-----------------
+2. carthage bootstrap --platform Mac --cache-builds
+
+Git commands
+------------
+3. git diff -- . ':(exclude)*.xib' | subl
+
+```
+
+### Automatic Command Copying
+
 
 ### Shell Aliasing
 Shell aliasing is crucial to the ease of use of `handy`. Beacuse you must at least specify a handyfile on every invocation of `handy` using an alias makes things much easier. For example, using bash:
