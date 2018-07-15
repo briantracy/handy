@@ -7,11 +7,8 @@ handy
 handy [<handyfile> [<copy paste program> [<command number>]]]
 ```
 
-
-`handy` is a command line utility that helps you keep track of a list of handy commands. 
-
 ### Intro
-
+`handy` is a simple utility that allows you to bring up a list of useful commands that you can't seem to remember or don't want to type. 
 
 ### Handyfile Syntax
 Each line in your handyfile is one of four things.
@@ -72,4 +69,5 @@ Passing in a clipboard management program allows you to directly copy one of you
 | OS            | Copy Paste Program           
 | ------------- |-------------
 | MacOS         | `pbcopy` (builtin) 
-| Linux         | `xclip` `xsel` `clipit`      
+| Linux         | `xclip` `xsel` `clipit`
+| Windows       | I have no idea.   
