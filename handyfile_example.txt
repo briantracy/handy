@@ -1,22 +1,24 @@
-* wait-for-input
+Example handyfile:
 
-^^^ That was a directive (line began with '*'). 
-Directives tell handy to do certain things. This wait-for-command
-directive tells handy to listen to stdin for a command number after
-it prints your handyfile
+Everything in a handyfile is ignored except for lines starting with:
 
-Handyfiles can contain anything you want, such as these comments. 
-The only significant lines are those that start with '*' (we just saw this),
-'-' (section heading), and '$' (actual commands). 
+    1. '*' - A directive line. These specify flags that are
+             passed to handy. 
+    2. '-' - A heading line. Use these to group commands into sections.
+    3. '$' - A command. Write out a command and it will be automatically
+             ordered with the rest of your commands in the output.
 
-Here is our first section, 
-$ command
-- Carthage Commands
 
-This will be printed as a section header when you use handy. 
-Lets put some commands in this section. 
+Current Directive Support:
+    Only one directive is currently supported '* wait-for-input'. This
+tells handy to listen to stdin after it displays your handyfile for
+a number. The nth command is then copied into your buffer.
 
-$ carthage-bootstrap --platform Mac --cache-builds
 
-$ blah-blah --blah=blah -b -l -a -h
+# * wait-for-input
 
+$ command 1
+$ command 2
+- Section Name
+$ command 3
+$ command 4
