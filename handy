@@ -20,7 +20,7 @@ def parse_file(filename):
   command_number = 1
 
   def format_title(title):
-    return '=== ' + title + ' ==='
+    return '\033[1;31m=== ' + title + ' ===\033[0;0m'
 
   def format_command(cmd, n):
     return str(n) + '. ' + cmd
