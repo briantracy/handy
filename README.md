@@ -74,7 +74,7 @@ Passing in a clipboard management program allows you to directly copy one of you
 | ------------- |-------------
 | MacOS         | `pbcopy` (builtin) 
 | Linux         | `xclip` `xsel` `clipit`
-| Windows       | `clip.exe`   
+| Windows       | `clip.exe` (builtin)   
 
 ### Directives
 Along with comments, commands, and headings, the final type of line you can have in your `handyfile` is a directive. Directives tell `handy` to perform some specific action when executed. Currently, the only directive that is supported is `* wait-for-input`, which tells `handy` when invoked to print out your list of handy commands, then pause and listen to `stdin` for the number of the command you want to copy. This came about due to the common use case of calling `handy` with no arguments, finding the correct command, then having to re-call `handy` with a number. This can be done in one step. 
