@@ -50,6 +50,12 @@ def get_user_number():
     print ''
     exit(0)
 
+def escape(cmd):
+  cmd = cmd.replace("'", "\\'")
+  cmd = cmd.replace('"', '\\"')
+  cmd = cmd.replace('%', '%%')
+  return cmd
+
 def handy(handyfile, copyprogram=None, cmdnum=None):
   check_can_read_file(handyfile)
 
@@ -66,7 +72,7 @@ def handy(handyfile, copyprogram=None, cmdnum=None):
 
   cmdnum = int(cmdnum)
   if copyprogram is not None and cmdnum > 0 and cmdnum <= len(commands):
-    shell = "printf '" + commands[cmdnum - 1] + "' | " + copyprogram
+    shell = "printf $'" + escape(commands[cmdnum - 1]) + "' | " + copyprogram
     system(shell)
   else:
     print 'Invalid command number or no copy-program specified'
